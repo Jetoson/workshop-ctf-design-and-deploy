@@ -1,0 +1,44 @@
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+// Encrypted flag
+unsigned char encrypted_flag[] = { 0xf4, 0x6f, 0x58, 0xf, 0x3f, 0x7e, 0x15, 0x4, 0x18, 0x44, 0xeb, 0xc5, 0x40, 0x1a, 0xb, 0x84, 0x7c, 0xaf, 0x15, 0xf, 0x92, 0xaf, 0x3c, 0x9d, 0x37, 0x42, 0x3e, 0xc9, 0x57, 0x7a, 0x22, 0x1a };
+unsigned char iv[] = { 0x94, 0x80, 0x40, 0x4a, 0x3, 0x5d, 0xc, 0x5, 0x3c, 0x42, 0xd, 0x48, 0x6a, 0xcb, 0xff, 0x16 };
+
+// This function contains the key hidden in plain sight!
+void secret_function() {
+    // The key is initialized here, putting it in the .text section as instructions
+    unsigned char key[16];
+    key[0] = 0x67;
+    key[1] = 0x80;
+    key[2] = 0x8a;
+    key[3] = 0xfc;
+    key[4] = 0xca;
+    key[5] = 0x49;
+    key[6] = 0xa;
+    key[7] = 0x1c;
+    key[8] = 0xd3;
+    key[9] = 0xd;
+    key[10] = 0x3c;
+    key[11] = 0x5e;
+    key[12] = 0x14;
+    key[13] = 0x55;
+    key[14] = 0xf5;
+    key[15] = 0xec;
+
+    printf("This function does nothing useful... or does it?\n");
+    
+    // Maybe some dummy operation to prevent optimization
+    for(int i=0; i<16; i++) {
+        key[i] ^= 0xAA;
+    }
+}
+
+int main() {
+    printf("I am a secure binary. My secrets are safe.\n");
+    secret_function();
+    return 0;
+}
