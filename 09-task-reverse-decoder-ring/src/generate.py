@@ -88,7 +88,7 @@ int main(int argc, char *argv[]) {{
     # Compile the challenge
     print("Compiling challenge...")
     subprocess.check_call([
-        'gcc', '-O0', '-o', 'decoder_ring', 'challenge.c'
+        'gcc', '-O0', '-no-pie', '-o', 'decoder_ring', 'challenge.c'
     ])
     print("Compilation successful: decoder_ring")
 
