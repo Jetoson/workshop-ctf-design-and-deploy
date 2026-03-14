@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 /**
  * Hidden "win" function — reads and prints the flag.
@@ -36,7 +37,7 @@ int main(void)
 	puts("");
 	printf("[SYSTEM] Enter passphrase: ");
 
-	gets(passphrase);
+	read(0, passphrase, 256);
 
 	printf("[SYSTEM] Checking passphrase: \"%s\"\n", passphrase);
 	puts("[SYSTEM] ACCESS DENIED. Invalid passphrase.");
