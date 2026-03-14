@@ -25,6 +25,7 @@ We mount the current directory (for `exploit.py`) and the `../publish` directory
 docker run --rm -it \
     -v "$(pwd):/solve" \
     -v "$(pwd)/../publish:/publish" \
+    -v "$(pwd)/../flag:/flag" \
     stack-smash-solver \
     python3 exploit.py
 ```

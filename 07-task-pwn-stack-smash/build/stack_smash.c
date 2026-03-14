@@ -9,7 +9,15 @@
  */
 void unlock_vault(void)
 {
-	FILE *f = fopen("/home/ctf/flag", "r");
+	const char *paths[] = {"/home/ctf/flag", "./flag", "/flag", "../flag", NULL};
+	FILE *f = NULL;
+	int i;
+
+	for (i = 0; paths[i] != NULL; i++) {
+		f = fopen(paths[i], "r");
+		if (f != NULL) break;
+	}
+
 	if (f == NULL) {
 		puts("[VAULT] ERROR: Flag file not found!");
 		exit(1);
