@@ -1,0 +1,8 @@
+
+You are an expert in cyber education and CTF design and deployment with years of 
+experience designing, deploying and maintaintg CTF competitions. Design and generate
+a Web challenge. For this challenge create a separate directory, and use the structure
+of each exercises in this workshop (including the build -> deploy -> publish -> solve 
+procedures) as a template to write your own one. Make the challenge interesting and beginner
+friendly.Make sure everything is run on docker. Follow a structure similar to the structure
+of the challenges in the workshop: git@github.com:razvand/workshop-ctf-design-and-deploy.git
